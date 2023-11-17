@@ -1,0 +1,540 @@
+/* main.css */
+body {
+    background-color: #f0f0f0;
+    animation: changeBackgroundColor 1s ease-in 1s forwards;
+
+    font-family: Arial, sans-serif;
+    margin: 0%;
+    padding: 0%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Контейнеры */
+.container-main {
+    display: block;
+    text-align: center;
+    user-select: none;
+}
+
+.top-panel {
+    display: none;
+    width: 100%;
+    height: 7.5%;
+    position: absolute;
+    top: 0%;
+    user-select: none;
+}
+
+.content-glavtext {
+    display: none;
+    position: absolute;
+    top: 7.5%;
+    width: 100%;
+    user-select: none;
+}
+
+.content-dictext {
+    display: none;
+    position: absolute;
+    top: 35.5%;
+    width: 100%;
+    user-select: none;
+}
+
+.content-buttons {
+    display: none;
+    position: absolute;
+    gap: 1%;
+    top: 41.5%;
+    width: 100%;
+    user-select: none;
+}
+
+.content-banners {
+    display: none;
+    position: absolute;
+    gap: 1.2%;
+    top: 60.0%;
+    width: 100%;
+    user-select: none;
+    justify-content: center;
+}
+
+
+/* Стили для баннера */
+.banner {
+    width: 80%;
+    max-width: 25%;
+    height: 230px;
+    padding: 1%;
+    border-radius: 4.5%;
+    background-color: #cfcdcf;
+    backdrop-filter: blur(10px);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+    margin-left: 1%;
+    opacity: 0%;
+    animation-delay: 0.6s;
+    transition: transform 0.3s ease-in-out;
+    animation: fadeInputUp 0.7s ease-in-out forwards;
+}
+
+.media-banner {
+    height: 20%;
+    border-top-left-radius: 4.5%;
+    border-top-right-radius: 4.5%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+}
+
+.banner:hover {
+    transform: scale(1.05) translateY(-7px);
+}
+
+
+/* Стили для текста внутри баннера */
+.banner h2 {
+    font-size: 24px;
+    margin: 35px 0 0 0;
+    padding: 0 0 0 20px;
+}
+
+.banner p {
+    font-size: 16px;
+    margin-top: 15px;
+    padding-left: 20px;
+}
+
+/* Стили кругов для баннера */
+
+/* Общие стили для кругов */
+.media-circle1,
+.media-circle2,
+.media-circle3 {
+    width: 25px;
+    height: 25px;
+    border: 3.5px solid transparent;
+    background-color: transparent;
+    border-radius: 50%;
+    position: relative;
+    animation: move 2s infinite alternate;
+}
+
+/* Уникальные стили для каждого круга */
+.media-circle1 {
+    border-color: #8ac6d1;
+    z-index: 1;
+    box-shadow: 0px 0px 5px rgba(138, 198, 209, 0.5);
+    animation-name: move, glow1;
+    animation-delay: 0s;
+}
+
+.media-circle2 {
+    margin-left: -9px;
+    border-color: #a139f7;
+    z-index: 2;
+    box-shadow: 0px 0px 5px rgba(161, 57, 247, 0.5);
+    animation-name: move, glow2;
+    animation-delay: .2s;
+}
+
+.media-circle3 {
+    margin-left: -9px;
+    border-color: #c1f14f;
+    z-index: 1;
+    box-shadow: 0px 0px 5px rgba(193, 241, 79, 0.5);
+    animation-name: move, glow3;
+    animation-delay: .4s;
+}
+
+/* Стили для контейнера */
+.content-circles {
+    width: 100px;
+    height: 40px;
+    margin-left: 30%;
+    display: flex;
+    align-items: center;
+}
+
+/* Анимации */
+@keyframes move {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(25px); }
+}
+
+@keyframes glow1 {
+    0% { box-shadow: 0 0 2.5px #8ac6d1; }
+    50% { box-shadow: 0 0 10px #8ac6d1, 0 0 15px #8ac6d1; }
+    100% { box-shadow: 0 0 2.5px #8ac6d1; }
+}
+
+@keyframes glow2 {
+    0% { box-shadow: 0 0 2.5px #a139f7; }
+    50% { box-shadow: 0 0 10px #a139f7, 0 0 15px #a139f7; }
+    100% { box-shadow: 0 0 2.5px #a139f7; }
+}
+
+@keyframes glow3 {
+    0% { box-shadow: 0 0 2.5px #c1f14f; }
+    50% { box-shadow: 0 0 10px #c1f14f, 0 0 15px #c1f14f; }
+    100% { box-shadow: 0 0 2.5px #c1f14f; }
+}
+
+
+/* Анимация загрузки */
+.content-loaderc {
+    width: 30%;
+    height: 40px;
+    margin: 0 auto; /* Это выравнивает элемент по центру по горизонтали */
+    display: flex;
+    align-items: center;
+}
+
+
+.line {
+    display: inline-block;
+    width: 25px;
+    height: 15px;
+    border-radius: 15px;
+    background-color: #333;
+  }
+  
+  
+  .load-2 .line:nth-last-child(1) {
+    animation: loadingB 1.5s 1s infinite;
+  }
+  
+  .load-2 .line:nth-last-child(2) {
+    animation: loadingB 1.5s 0.5s infinite;
+  }
+  
+  .load-2 .line:nth-last-child(3) {
+    animation: loadingB 1.5s 0s infinite;
+  }
+  
+  @keyframes loadingB {
+    0% {
+      width: 25px;
+    }
+    50% {
+      width: 45px;
+    }
+    100% {
+      width: 25px;
+    }
+  }
+
+
+.question-circle {
+    width: 30px;
+    height: 30px;
+    border: 2.95px solid #333;
+    background-color: transparent;
+    border-radius: 50%;
+    position: relative;
+    margin-left: auto;
+    margin-right: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+}
+
+.question-circle::before {
+    content: "?";
+    color: #333;
+    font-size: 25px;
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+/* Логотип */
+.logo {
+    width: 17px;
+    height: 17px;
+    background-color: transparent;
+    border-radius: 50%;
+    align-self: center;
+    padding-left: 20px;
+    margin-top: -10px;
+}
+
+
+.logo-circle {
+    width: 17px;
+    height: 17px;
+    border: 5px solid #8ac6d1;
+    background-color: transparent;
+    border-radius: 50%;
+    animation-name: glow1;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+/* Стили шрифтов */
+.header-main {
+    color: #333;
+    font-size: 5em;
+}
+
+.animated-logo {
+    display: flex;
+    color: #333;
+}
+
+.animated-dict {
+    display: flex;
+    color: #333;
+    margin-left: 20px;
+}
+
+/* Анимация исчезновения начального экрана */
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes changeBackgroundColor {
+    0% {
+        background-color: #f0f0f0;
+    }
+    100% {
+        background-color: #dad5da;
+    }
+}
+
+.hide-text {
+    animation: fadeOut 1s ease-in 1s forwards;
+}
+
+/* Кнопки */
+.telegram-button {
+    display: flex;
+    justify-content: flex-end;
+    flex-grow: 1;
+    align-items: center;
+    height: 100%;
+    padding-right: 20px;
+    opacity: 0;
+    transform: translateY(10px);
+    animation: fadeInputUp 0.7s ease-in-out forwards;
+}
+
+.telegram-link {
+    background-color: white;
+    padding: 13px 20px;
+    border-radius: 20px;
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+
+.bot-button {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100%;
+    padding-left: 40px;
+    opacity: 0;
+    color: #d8d7d7;
+    transform: translateY(10px);
+    animation: fadeInputUp 0.7s ease-in-out forwards;
+    animation-delay: 0.5s;
+}
+
+.bot-link {
+    background-color: #222222;
+    padding: 13px 20px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: bold;
+    color: #c0bdbd;
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+
+.channel-button {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100%;
+    margin-right: 100px;
+    opacity: 0;
+    transform: translateY(10px);
+    animation: fadeInputUp 0.7s ease-in-out forwards;
+    animation-delay: 0.5s;
+}
+
+.channel-link {
+    background-color: white;
+    padding: 13px 20px;
+    border-radius: 20px;
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* Фрагменты кнопок */
+@keyframes fadeInputUp {
+    0% {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Анимации при наведении */
+.telegram-link:hover {
+    background-color: hsl(0, 0%, 96.5%);
+    transform: translateY(4px) translateX(4px);
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.bot-link:hover {
+    background-color: #111111;
+    transform: translateY(4px) translateX(4px);
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.channel-link:hover {
+    background-color: hsl(0, 0%, 96.5%);
+    transform: translateY(4px) translateX(4px);
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Стили текстов для анимаций */
+.text-botifyex {
+    align-self: center;
+    font-size: 24px;
+    padding-left: 10px;
+}
+
+.bio_text {
+    font-size: 231%;
+}
+
+.dict_text {
+    font-size: 20px;
+}
+
+/* Анимации текста */
+.animated-bio {
+    flex-wrap: wrap;
+    display: flex;
+    color: hsl(0, 0%, 20%);
+    margin: 0;
+    padding: 0;
+    max-height: 240px;
+    margin-left: 20px;
+}
+
+
+.letter {
+    opacity: 0;
+    transform: translateY(37px);
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+.animated-line {
+    opacity: 0;
+    transform: translateY(27px);
+    transform: translateX(-10px) translateY(37px);
+    transition: opacity 0.3s ease-in-out 0.3s, transform 0.5s ease-in-out;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* ######################################################################################################################################## */
+/* ######################################################################################################################################## */
+
+.loader {
+    position: absolute;
+    top: calc(63% - 32px);
+    left: calc(50% - 32px);
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    perspective: 800px;
+}
+  
+.inner {
+  position: absolute;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;  
+}
+
+.inner.one {
+  left: 0%;
+  top: 0%;
+  animation: rotate-one 1s linear infinite;
+  border-bottom: 3px solid #333;
+}
+
+.inner.two {
+  right: 0%;
+  top: 0%;
+  animation: rotate-two 1s linear infinite;
+  border-right: 3px solid #333;
+}
+
+.inner.three {
+  right: 0%;
+  bottom: 0%;
+  animation: rotate-three 1s linear infinite;
+  border-top: 3px solid #333;
+}
+
+@keyframes rotate-one {
+  0% {
+    transform: rotateX(35deg) rotateY(-45deg) rotateZ(0deg);
+  }
+  100% {
+    transform: rotateX(35deg) rotateY(-45deg) rotateZ(360deg);
+  }
+}
+
+@keyframes rotate-two {
+  0% {
+    transform: rotateX(50deg) rotateY(10deg) rotateZ(0deg);
+  }
+  100% {
+    transform: rotateX(50deg) rotateY(10deg) rotateZ(360deg);
+  }
+}
+
+@keyframes rotate-three {
+  0% {
+    transform: rotateX(35deg) rotateY(55deg) rotateZ(0deg);
+  }
+  100% {
+    transform: rotateX(35deg) rotateY(55deg) rotateZ(360deg);
+  }
+}
